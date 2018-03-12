@@ -21,7 +21,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tile {
-  font-family: monospace;
   position: relative;
   width: 12.5%;
   padding-bottom: 12.5%;

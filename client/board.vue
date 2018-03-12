@@ -20,12 +20,7 @@ export default {
 }
 </script>
 <style lang="scss">
-* { box-sizing: border-box; }
-
-.board {
-  position: relative;
-  .row {
-    display:flex;
-  }
+.board .row {
+  display:flex;
 }
 </style>
