@@ -11,6 +11,6 @@ $twig = new Twig_Environment($loader, array(
 echo $twig->render('index.html', array(
   'title' => 'An example PHP website', 
   'description' => 'Built with Composer, Twig, Webpack, and Vue',
-  'data' => 'test'
+  'data' => 'test from twig'
 ));
 ?>

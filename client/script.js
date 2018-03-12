@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import board from './Board.vue'
+import Vue from 'vue/dist/vue.common.js'
+import board from './board.vue'
 
 console.log('loaded', board)
 
