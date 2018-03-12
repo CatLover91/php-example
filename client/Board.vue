@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'board',
+  name: 'Board',
   props: ['data'],
   mounted() {
     console.log('board mounted', this.data)

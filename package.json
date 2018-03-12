@@ -9,7 +9,7 @@
   },
   "scripts": {
     "lint": "standard --verbose client/*.js | snazzy"
-  }.
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",

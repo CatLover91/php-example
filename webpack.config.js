@@ -33,6 +33,10 @@ function makeStyleLoader (type) {
   })
 }
 
+function cwd (file) {
+  return path.join(process.cwd(), file || '')
+}
+
 module.exports = {
   entry: {
     entry: './client/script.js'
@@ -41,6 +45,18 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'script.js'
+  },
+  resolve: {
+    extensions: [ '.js', '.vue', '.json', '.scss' ],
+    alias: {
+      root: path.join(__dirname, '../client')
+    },
+    modules: [
+      cwd('node_modules'),
+      // this meanse you can get rid of dot hell
+      // for example import 'components/Foo' instead of import '../../components/Foo'
+      cwd('client')
+    ]
   },
   module: {
     rules: [{
