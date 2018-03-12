@@ -1,6 +1,11 @@
 const path = require('path')
 const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
+
+// this is used to help juggle
+// Sass, Postcss, and vue template
+// style tags
 function makeStyleLoader (type) {
   const cssLoader = {
     loader: 'css-loader',
@@ -11,13 +16,17 @@ function makeStyleLoader (type) {
     }
   }
   const loaders = [ cssLoader ]
-  loaders.push({ loader: 'postcss-loader', options: {
-    config: {
-      path: './postcss.config.js'
+  loaders.push({
+    loader: 'postcss-loader',
+    options: {
+      config: {
+        path: './postcss.config.js'
+      }
     }
-  }})
-  if (type)
-    loaders.push(type + '-loader')
+  })
+
+  if (type) { loaders.push(type + '-loader') }
+
   return ExtractTextPlugin.extract({
     use: loaders,
     fallback: 'vue-style-loader'
@@ -55,5 +64,8 @@ module.exports = {
       test: /\.scss$/,
       use: makeStyleLoader('sass')
     }]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('style.css')
+  ]
 }

@@ -4,12 +4,32 @@
   "repository": "https://github.com/CatLover91/php-example.git",
   "author": "catlover91 <7215827+CatLover91@users.noreply.github.com>",
   "license": "GPL-3.0",
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "scripts": {
+    "lint": "standard --verbose client/*.js | snazzy"
+  }.
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.8.1",
+    "postcss-import": "^11.1.0",
+    "postcss-loader": "^2.1.1",
+    "sass-loader": "^6.0.7",
     "snazzy": "^7.1.1",
     "standard": "^11.0.0",
+    "vue-loader": "^14.2.1",
+    "vue-style-loader": "^4.0.2",
+    "vue-template-compiler": "^2.5.15",
     "webpack": "^4.1.1"
+  },
+  "dependencies": {
+    "vue": "^2.5.15"
   }
 }

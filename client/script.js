@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import board from './board'
+import board from './board.vue'
 
 new Vue({
   el: 'app',
