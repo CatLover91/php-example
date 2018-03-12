@@ -1,7 +1,7 @@
 # php-example
-an example project using php, twig, vue, and webpack
+an example project using php, twig, vue, and webpack. Javascript code is written following the [standard style guide](https://standardjs.com/).
 
-It is a simple representation of this chess board
+The project is a simple representation of this chess board
 
 <img src="http://www.mark-weeks.com/aboutcom/images/aa03e24d.gif">
 

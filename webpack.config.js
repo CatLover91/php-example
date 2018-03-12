@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-
 // this is used to help juggle
 // Sass, Postcss, and vue template
 // style tags
@@ -53,8 +52,9 @@ module.exports = {
     },
     modules: [
       cwd('node_modules'),
-      // this meanse you can get rid of dot hell
-      // for example import 'components/Foo' instead of import '../../components/Foo'
+      // this means you can get rid of dot hell
+      // for example import 'components/Foo'
+      // instead of import '../../components/Foo'
       cwd('client')
     ]
   },

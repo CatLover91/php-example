@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <meta name="description"  content="{{ description }}">
+    <meta name="description" content="{{ description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./dist/style.css">
   </head>
@@ -15,6 +15,12 @@
     </style>
     <h1>{{ title }}</h1>
     <p>{{ description }}</p>
+    <!--
+    In order to get around Twig/Vue templating conflicts,
+    I pipe a data json via Twig into a Vue component.
+    This way, webpack handles Vue template compilation
+    for you and Twig can run unhindered.
+    -->
     <div id="app">
       <board :data="{{ data }}"></board>
     </div>
