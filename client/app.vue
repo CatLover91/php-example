@@ -1,10 +1,16 @@
 <template>
   <div class="container">
     <div class="container__board">
-      <board :data="board" :select="selectFunc"></board>
+      <board :data="board" 
+             :select="select"
+             :selectedridx="selectedRidx"
+             :selectedcidx="selectedCidx">
+      </board>
     </div>
     <div class="container__list">
-      <list :list="list" :clear="clearFunc"></list>
+      <list :list="list" 
+            :clear="clear">
+      </list>
     </div>
   </div>
 </template>
@@ -17,16 +23,27 @@ export default {
   props: ['board'],
   data() {
     return {
-      list: []
+      list: [],
+      selectedRidx: -1,
+      selectedCidx: -1
     }
   },
   methods: {
-    clearFunc() {
+    clear() {
       this.list = []
+      this.selectedRidx = -1
+      this.selectedCidx = -1
       console.log('list cleared')
     },
-    selectFunc(str) {
+    select(str, ridx, cidx) {
       this.list.push(str)
+      if(this.selectedRidx === ridx && this.selectedCidx === cidx) {
+        this.selectedRidx = -1
+        this.selectedCidx = -1
+      } else {
+        this.selectedRidx = ridx
+        this.selectedCidx = cidx
+      }
       console.log('list item added', str)
     }
   },

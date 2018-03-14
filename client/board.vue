@@ -6,7 +6,8 @@
              :piecestr="piece" 
              :ridx="ridx" 
              :cidx="cidx"
-             :select="select">
+             :select="select"
+             :selected="ridx === selectedridx && cidx === selectedcidx">
       </piece>
     </div>
   </div>
@@ -16,7 +17,7 @@ import piece from './piece.vue'
 
 export default {
   name: 'board',
-  props: ['data', 'select'],
+  props: ['data', 'select', 'selectedridx', 'selectedcidx'],
   mounted() {
     console.log('board mounted', this.data)
   },
@@ -25,7 +26,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .board .row {
   display:flex;
 }

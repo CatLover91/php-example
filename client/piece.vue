@@ -1,11 +1,11 @@
 <template>
-  <div class="tile" :class="tile" @click="select(outputStr)">
+  <div class="tile" :class="[tile, selected ? 'selected' : '']" @click="select(outputStr, ridx, cidx)">
     <div class="piece" :class="color">{{ pieceType | toUnicode(color) }}</div>
   </div>
 </template>
 <script>
 export default {
-  props: ['piecestr', 'ridx', 'cidx', 'select'],
+  props: ['piecestr', 'ridx', 'cidx', 'select', 'selected'],
   computed: {
     tile() {
       return (this.ridx % 2 === 0 && this.cidx % 2 === 0) || (this.ridx % 2 !== 0 && this.cidx % 2 !== 0) ? 'white' : 'black'
@@ -73,11 +73,18 @@ export default {
   position: relative;
   width: 12.5%;
   padding-bottom: 12.5%;
+  transition: 350ms ease all;
   &.white {
     background: #ccc;
+    &.selected {
+      background: #fcf8a9;
+    }
   }
   &.black {
     background: #666;
+    &.selected {
+      background: #f4eb42;
+    }
   }
   .piece {
     position: absolute;
