@@ -1,5 +1,5 @@
 <template>
-  <div class="tile" :class="tile">
+  <div class="tile" :class="tile" @click="select(outputStr)">
     <div class="piece" :class="color">{{ pieceType }}</div>
   </div>
 </template>
@@ -15,6 +15,37 @@ export default {
     },
     pieceType() {
       return this.piecestr.split('')[1]
+    },
+    outputStr() {
+      let y = 8 - this.ridx
+      let x = ''
+      switch(this.cidx) {
+        case 0:
+          x = 'a'
+          break
+        case 1:
+          x = 'b'
+          break
+        case 2:
+          x = 'c'
+          break
+        case 3:
+          x = 'd'
+          break
+        case 4:
+          x = 'e'
+          break
+        case 5:
+          x = 'f'
+          break
+        case 6:
+          x = 'g'
+          break
+        case 7:
+          x = 'h'
+          break
+      }
+      return this.pieceType + x + y
     }
   }
 }

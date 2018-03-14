@@ -1,7 +1,13 @@
 <template>
   <div class="board">
     <div class="row" v-for="(row, ridx) in data">
-      <piece v-for="(piece, cidx) in row" :piecestr="piece" :ridx="ridx" :cidx="cidx"></piece>
+      <piece v-for="(piece, cidx) in row"
+             :key="cidx"
+             :piecestr="piece" 
+             :ridx="ridx" 
+             :cidx="cidx"
+             :select="select">
+      </piece>
     </div>
   </div>
 </template>
@@ -9,8 +15,8 @@
 import piece from './piece.vue'
 
 export default {
-  name: 'Board',
-  props: ['data'],
+  name: 'board',
+  props: ['data', 'select'],
   mounted() {
     console.log('board mounted', this.data)
   },

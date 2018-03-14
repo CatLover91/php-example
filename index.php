@@ -7,6 +7,7 @@ $loader = new Twig_Loader_Filesystem('views');
 $twig = new Twig_Environment($loader, array(
   'cache' => 'cache',
 ));
+
 $board = array(
   array('', '', '', '', 'wR', 'bN', 'bK', ''),
   array('bP', 'bR', '', '', '', 'bP', 'bP', 'bP'),
