@@ -1,7 +1,6 @@
 import Vue from 'vue/dist/vue.common.js'
-import board from './board.vue'
-
-console.log('loaded', board)
+import app from './app.vue'
+import 'normalize.css'
 
 new Vue({
   el: '#app',
@@ -9,6 +8,6 @@ new Vue({
     console.log('vue mounted')
   },
   components: {
-    board
+    app
   }
 })

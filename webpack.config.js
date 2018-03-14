@@ -38,7 +38,7 @@ function cwd (file) {
 
 module.exports = {
   entry: {
-    entry: './client/script.js'
+    entry: './client/index.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),

@@ -1,11 +1,11 @@
 <template>
   <div class="tile" :class="tile" @click="select(outputStr)">
-    <div class="piece" :class="color">{{ pieceType }}</div>
+    <div class="piece" :class="color">{{ pieceType | toUnicode(color) }}</div>
   </div>
 </template>
 <script>
 export default {
-  props: ['piecestr', 'ridx', 'cidx'],
+  props: ['piecestr', 'ridx', 'cidx', 'select'],
   computed: {
     tile() {
       return (this.ridx % 2 === 0 && this.cidx % 2 === 0) || (this.ridx % 2 !== 0 && this.cidx % 2 !== 0) ? 'white' : 'black'
@@ -14,7 +14,7 @@ export default {
       return this.piecestr.split('')[0] === 'w' ? 'white' : 'black'
     },
     pieceType() {
-      return this.piecestr.split('')[1]
+      return this.piecestr.length > 1 ? this.piecestr.split('')[1] : ''
     },
     outputStr() {
       let y = 8 - this.ridx
@@ -47,6 +47,24 @@ export default {
       }
       return this.pieceType + x + y
     }
+  },
+  filters: {
+    toUnicode(str, color) {
+      switch(str) {
+        case 'K':
+          return color === 'white' ? '♔' : '♚'
+        case 'Q':
+          return color === 'white' ? '♕' : '♛'
+        case 'R':
+          return color === 'white' ? '♖' : '♜'
+        case 'B':
+          return color === 'white' ? '♗' : '♝'
+        case 'N':
+          return color === 'white' ? '♘' : '♞'
+        case 'P': 
+          return color === 'white' ? '♙' : '♟'
+      }
+    }
   }
 }
 </script>
@@ -56,10 +74,10 @@ export default {
   width: 12.5%;
   padding-bottom: 12.5%;
   &.white {
-    background: rgba(0,0,0,0.2);
+    background: #ccc;
   }
   &.black {
-    background: rgba(0,0,0,0.6);
+    background: #666;
   }
   .piece {
     position: absolute;

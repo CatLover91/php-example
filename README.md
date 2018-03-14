@@ -5,7 +5,7 @@ The project is a simple representation of this chess board
 
 <img src="http://www.mark-weeks.com/aboutcom/images/aa03e24d.gif">
 
-In order to run this application, you need Composer, PHP, Nodejs, and Yarn installed on your system.
+In order to run this application, you need Composer, PHP, and Nodejs (Yarn is a nice-to-have) installed on your system.
 
 first, install twig
 
@@ -13,7 +13,7 @@ first, install twig
 
 then, install front end dependencies
 
-`yarn`
+`yarn` or `npm install` depending if you have yarn
 
 build the front end
 
